@@ -1,0 +1,123 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "CPU_PLL": 3050,
+                        "PCP_VRM": -50,
+                        "SOC_VRM": -50
+                    },
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0020": "0xffff",
+                            "0x1F0088": "0x02020003",
+                            "0x1F0090": "0x02020003",
+                            "0x1F0098": "0x02020003",
+                            "0x1F00A0": "0x02020003",
+                            "0x1F00A8": "0x00000003",
+                            "0x1F00B0": "0x00000003",
+                            "0x1F00B8": "0x00000003",
+                            "0x1F00C0": "0x00000003",
+                            "0x1F00C8": "0x00000003",
+                            "0x1F00D0": "0x00000003",
+                            "0x1F00D8": "0x00000003",
+                            "0x1F00E0": "0x00000003"
+                        }
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": -30
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": -10
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 10
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 30
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 50
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 70
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 90
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 110
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 120
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_rcbx8.json"
+        }
+    ]
+}

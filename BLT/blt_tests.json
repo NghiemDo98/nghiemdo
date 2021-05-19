@@ -1,0 +1,432 @@
+{
+    "test_suites": [
+        {
+            "enable": false,
+            "name": "CentOS_v3",
+            "display": "CentOS Test v3",
+            "config": "test_configs/suite_centos_v3.json",
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v3.1",
+            "display": "CentOS Test v3.1",
+            "config": "test_configs/suite_centos_v31.json",
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v3.2",
+            "display": "CentOS Test v3.2",
+            "config": "test_configs/suite_centos_v31.json",
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v3.1_sku",
+            "display": "SKU screening",
+            "config": "test_configs/suite_centos_sku.json",
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v3.3",
+            "display": "CentOS Test v3.3",
+            "config": "test_configs/suite_centos_v33.json",
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v4.0",
+            "display": "CentOS Test v4.0",
+            "config": "test_configs/suite_centos_v40.json",
+            "iterations": 3,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v4.1",
+            "display": "CentOS Test v4.1",
+            "config": "test_configs/suite_centos_v41.json",
+            "iterations": 3,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v4.2",
+            "display": "CentOS Test v4.2",
+            "config": "test_configs/suite_centos_v42.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v4.3",
+            "display": "CentOS Test v4.3",
+            "config": "test_configs/suite_centos_v43.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v5.0",
+            "display": "CentOS Test v5.0",
+            "config": "test_configs/suite_centos_v50.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v5.1",
+            "display": "CentOS Test v5.1",
+            "config": "test_configs/suite_centos_v51.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v5.2",
+            "display": "CentOS Test v5.2",
+            "config": "test_configs/suite_centos_v52.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v5.3",
+            "display": "CentOS Test v5.3",
+            "config": "test_configs/suite_centos_v53.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": true,
+            "name": "CentOS_v5.4",
+            "display": "CentOS Test v5.4",
+            "config": "test_configs/suite_centos_v54.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_v6.0",
+            "display": "CentOS Test v6.0",
+            "config": "test_configs/suite_centos_v60.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Screening"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_AVS",
+            "display": "Calibration AVS",
+            "config": "test_configs/suite_calibration.json",
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_AVS_2DPC",
+            "display": "Calibration AVS",
+            "config": "test_configs/suite_calibration_avs_2dpc.json",
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v3.3",
+            "display": "Calibration v3.3",
+            "config": "test_configs/suite_calibration_v3.3.json",
+            "iterations": 3,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v4",
+            "display": "Calibration v4",
+            "config": "test_configs/suite_calibration_v4.json",
+            "iterations": 3,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v4.1",
+            "display": "Calibration v4.1",
+            "config": "test_configs/suite_calibration_v4.1.json",
+            "iterations": 3,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v4.2",
+            "display": "Calibration v4.2",
+            "config": "test_configs/suite_centos_v42.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v4.3",
+            "display": "Calibration v4.3",
+            "config": "test_configs/suite_centos_v43.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v5.0",
+            "display": "Calibration v5.0",
+            "config": "test_configs/suite_centos_v50.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v5.1",
+            "display": "Calibration v5.1",
+            "config": "test_configs/suite_centos_v51.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v5.2",
+            "display": "Calibration v5.2",
+            "config": "test_configs/suite_centos_v52.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "Calibration_v5.3",
+            "display": "Calibration v5.3",
+            "config": "test_configs/suite_centos_v53.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": true,
+            "name": "Calibration_v5.4",
+            "display": "Calibration v5.4",
+            "config": "test_configs/suite_centos_v54.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+                {
+            "enable": false,
+            "name": "Calibration_v6.0",
+            "display": "Calibration v6.0",
+            "config": "test_configs/suite_centos_v60.json",
+            "iterations": 3,
+            "stop_on_fail": false,
+            "screening_mode": "Calibration"
+        },
+        {
+            "enable": false,
+            "name": "FA_CentOS_v4.0",
+            "display": "FA CentOS Test v4.0",
+            "config": "test_configs/suite_centos_v40.json",
+            "stop_on_fail": false,
+            "iterations": 10,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "FA_CentOS_v4.1",
+            "display": "FA CentOS Test v4.1",
+            "config": "test_configs/suite_fa_centos_v41.json",
+            "stop_on_fail": false,
+            "iterations": 10,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "FA_CentOS_v4.2",
+            "display": "FA CentOS Test v4.2",
+            "config": "test_configs/suite_centos_v42.json",
+            "stop_on_fail": false,
+            "iterations": 10,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "FA_CentOS_v4.3",
+            "display": "FA CentOS Test v4.3",
+            "config": "test_configs/suite_centos_v43.json",
+            "stop_on_fail": false,
+            "iterations": 10,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "FA_CentOS_v5.0",
+            "display": "FA CentOS Test v5.0",
+            "config": "test_configs/suite_centos_v50.json",
+            "stop_on_fail": false,
+            "iterations": 10,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "FA_Mesh_margin",
+            "display": "FA Mesh margin",
+            "config": "test_configs/suite_centos_v50_mesh_margin.json",
+            "stop_on_fail": false,
+            "iterations": 10,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "Sku_30powercycles",
+            "display": "SKU 30 power cycles",
+            "config": "test_configs/suite_centos_sku.json",
+            "stop_on_fail": false,
+            "iterations": 30,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "Test_30powercycles",
+            "display": "Test 30 power cycles",
+            "config": "test_configs/suite_centos_v31.json",
+            "stop_on_fail": false,
+            "iterations": 30,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "FA_Correlation",
+            "display": "Correlate with ATE",
+            "config": "test_configs/suite_centos_fa.json",
+            "stop_on_fail": false,
+            "iterations": 30,
+            "screening_mode": "FA"
+        },
+        {
+            "enable": false,
+            "name": "CentOS_RCx",
+            "display": "[FA] Test RCx",
+            "config": "test_configs/suite_fa_centos_rcx.json",
+            "screening_mode": "FA",
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_RCB_x8",
+            "display": "[FA] RCB x8",
+            "config": "test_configs/suite_fa_rcb_x8.json",
+            "screening_mode": "FA",
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_10_powercycle",
+            "display": "[FA] 10 power cycles",
+            "config": "test_configs/suite_centos_fa.json",
+            "screening_mode": "FA",
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_BIN9_10_pc",
+            "display": "[FA BIN9] 10 pc",
+            "config": "test_configs/suite_centos_fa_bin9.json",
+            "screening_mode": "FA",
+            "iterations": 10,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_SHMOO_RCB",
+            "display": "[FA] SHMOO RCB",
+            "config": "test_configs/suite_centos_shmoo_rcb.json",
+            "screening_mode": "FA",
+            "iterations": 5,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_SHMOO_RCBx8",
+            "display": "[FA] SHMOO RCBx8",
+            "config": "test_configs/suite_centos_shmoo_rcb_x8.json",
+            "screening_mode": "FA",
+            "iterations": 5,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_Stress_RCA",
+            "display": "[FA] STRESS RCA",
+            "config": "test_configs/suite_stress_rca.json",
+            "screening_mode": "FA",
+            "iterations": 3,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_Stress_RCAx8",
+            "display": "[FA] STRESS RCAx8",
+            "config": "test_configs/suite_stress_rcax8.json",
+            "screening_mode": "FA",
+            "iterations": 3,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_Stress_RCB",
+            "display": "[FA] STRESS RCB",
+            "config": "test_configs/suite_stress_rcb.json",
+            "screening_mode": "FA",
+            "iterations": 3,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_BIN7_10_pc",
+            "display": "[FA BIN7] 10 pc",
+            "config": "test_configs/suite_centos_fa_bin7.json",
+            "screening_mode": "FA",
+            "iterations": 10,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_SHMOO_BIN7",
+            "display": "[FA] SHMOO BIN7",
+            "config": "test_configs/suite_centos_shmoo_bin7.json",
+            "screening_mode": "FA",
+            "iterations": 5,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_SHMOO_A1_RCB_GEN3",
+            "display": "[FA] SHMOO RCB-GEN3",
+            "config": "test_configs/suite_shmoo_A1_rcbgen3.json",
+            "screening_mode": "FA",
+            "iterations": 1,
+            "stop_on_fail": false
+        },
+        {
+            "enable": false,
+            "name": "FA_BIN9_1_20powercycles",
+            "display": "[FA] BIn9_1_20powercycles",
+            "config": "test_configs/suite_shmoo_A1_rcbgen3.json",
+            "screening_mode": "FA",
+            "iterations": 20,
+            "stop_on_fail": false
+        }
+    ]
+}

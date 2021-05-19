@@ -1,0 +1,7 @@
+{
+    "test_cases": [
+        {
+            "name": "CentOSTest", "display": "CentOS_FA_BIN7", "config": "test_configs/case_centos_fa_bin7.json"
+        }
+    ]
+}

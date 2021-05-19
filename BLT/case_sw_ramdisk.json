@@ -1,0 +1,39 @@
+{
+    "test_arguments": {
+        "name": "SW Ramdisk",
+        "console device": "/dev/ttyO2",
+        "console speed": "115200",
+        "monitor": ["/dev/ttyO4", "/dev/ttyO5"],
+        "stop_on_failed": false,
+        "power": "cycle",
+        "iterations": 3,
+        "tests": [
+            {
+                "test": "Memtester",
+                "description": "Test memory",
+                "power": "reset",
+                "command": "memtester 1G 1",
+                "expecting": {
+                    "Stuck Address": "ok",
+                    "Random Value": "ok",
+                    "Compare XOR": "ok",
+                    "Compare SUB": "ok",
+                    "Compare MUL": "ok",
+                    "Compare DIV": "ok",
+                    "Compare OR": "ok",
+                    "Compare AND": "ok",
+                    "Sequential Increment": "ok",
+                    "Solid Bits": "ok",
+                    "Block Sequential": "ok",
+                    "Checkerboard": "ok",
+                    "Bit Spread": "ok",
+                    "Bit Flip": "ok",
+                    "Walking Ones": "ok",
+                    "Walking Zeroes": "ok",
+                    "8-bit Writes": "ok",
+                    "16-bit Writes": "ok"
+                }
+            }
+        ]
+    }
+}

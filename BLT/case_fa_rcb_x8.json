@@ -1,0 +1,224 @@
+{
+    "test_arguments": {
+        "name": "SW Ramdisk",
+        "console_device": "/dev/ttyO2",
+        "console_speed": "115200",
+        "monitor": {
+            "SCP": "/dev/ttyO4",
+            "ATF": "/dev/ttyO5"
+        },
+        "sensor_monitor": {
+            "S0_SOC_Temp": {
+                "index": 0,
+                "min": 5,
+                "max": 95
+            },
+            "S0_Mem1InletTemp": {
+                "index": 0,
+                "min": 10,
+                "max": 80
+            },
+            "S0_Mem2InletTemp": {
+                "index": 0,
+                "min": 10,
+                "max": 80
+            },
+            "S0_CPUInletTemp": {
+                "index": 0,
+                "min": 10,
+                "max": 80
+            },
+            "S0_CPUOutletTemp": {
+                "index": 0,
+                "min": 10,
+                "max": 80
+            },
+            "AF_EX_Zone1_Temp": {
+                "index": 0,
+                "min": 10,
+                "max": 80
+            },
+            "AF_EX_Zone2_Temp": {
+                "index": 0,
+                "min": 10,
+                "max": 80
+            },
+            "S0_SOC_VRD_Temp": {
+                "index": 0,
+                "min": 9,
+                "max": 63
+            },
+            "S0_DIMM_VRD_Temp": {
+                "index": 0,
+                "min": 9,
+                "max": 63
+            },
+            "S0_PMD_VRD_Temp": {
+                "index": 0,
+                "min": 9,
+                "max": 63
+            },
+            "S0_DIMMG0_Temp": {
+                "index": 0,
+                "min": -1,
+                "max": 75
+            },
+            "S0_3V3_SOC_Pwr": {
+                "index": 0,
+                "min": -1,
+                "max": 65536
+            },
+            "S0_1V8_SOC_Pwr": {
+                "index": 0,
+                "min": -1,
+                "max": 65536
+            },
+            "S0_CPU_Pwr": {
+                "index": 0,
+                "min": -1,
+                "max": 65536
+            },
+            "S0_MEM_Pwr": {
+                "index": 0,
+                "min": -1,
+                "max": 65536
+            }
+        },
+        "stop_on_failed": false,
+        "power": "on",
+        "off_delay": 60,
+        "iterations": 3,
+        "boot_up": [
+            [
+                "NOTICE:  DRAM FW version",
+                90
+            ],
+            [
+                "DRAM: ",
+                90,
+                "BIN7"
+            ],
+            [
+                "American Megatrends",
+                120
+            ],
+            [
+                "EFI stub: Booting Linux Kernel...",
+                80
+            ],
+            [
+                "CentOS Linux 8",
+                80
+            ],
+            [
+                "login:",
+                80
+            ]
+        ],
+        "tests": [
+            {
+                "test": "LoginCentOS",
+                "description": "Test Login CentOS",
+                "enable": true,
+                "username": "root",
+                "password": "Ampere@4655",
+                "prompt": "\\#",
+                "retry": 3
+            },
+            {
+                "test": "CoreEnable",
+                "description": "Test number core enable",
+                "enable": true
+            },
+            {
+                "test": "xDiagAll",
+                "enable": true,
+                "description": "xDiaglinux Quicksilver run test by diag command",
+                "power": "reset",
+                "command": "msgnoti diagstop 0; diag stor -f rcb_x8.ini -time 300; diag net -f blt_test.ini -time 300; diag pci -f rcb_x8.ini -time 300",
+                "debug_cmd": "journalctl -u NetworkManager -a | tee /dev/null; dmesg",
+                "expecting": [
+                    "DIAG TEST DONE ALL"
+                ],
+                "fail": {
+                   "BIN9": ["FAILED", "FAIL", "STOPPED"]
+                }
+            }
+        ],
+        "fail_binning": {
+            "BIN6": [],
+            "BIN7": ["DDR initialization failure. Enter safemode"],
+            "BIN8": [],
+            "BIN9": ["AER failed", "PCIe Bus Error", "AER: Uncorrected", "AER: Corrected error", "AER: Multiple Corrected error"],
+            "BIN10": [],
+            "BIN11": ["Kernel panic"],
+            "BIN11-1": ["Hardware Error"],
+            "BIN12": [
+                "CE buffer overflow, reporting CE through SDEI",
+                "Unhandled Exception",
+                "Internal error",
+                "Stack dump",
+                "core dumped",
+                "Process Error: failed to allocate memory",
+                "Data abort: Translation fault, second level",
+                "Call trace",
+                "kernel/hung",
+                "Synchronous Abort",
+                "Synchronous Exception at",
+                "Exception happened in",
+                "FAILURE"
+            ]
+        },
+        "pass_binning": {
+            "0x80": {
+                "0x33": "BIN0",
+                "0x30": "BIN1"
+            },
+            "0x64": {
+                "0x33": "BIN2",
+                "0x30": "BIN3"
+            }
+        },
+        "error_signal": [
+            {
+                "name": "ATF ERROR",
+                "expect": {
+                    "CE buffer overflow, reporting CE through SDEI": "BIN12",
+                    "RAS: PCIe RASDP error": "BIN9",
+                    "ERROR:   Failed to populate": "BIN12",
+                    "ERR: 0xbff0c100": "BIN7",
+                    "DRAM: 0GB": "BIN7",
+                    "DDR initialization failure. Enter safemode": "BIN7"
+                }
+            },
+            {
+                "name": "SCP ERROR",
+                "expect": {
+                    "Error: Mesh": "BIN6",
+                    "Error: GIC": "BIN6"
+                }
+            },
+            {
+                "name": "DDR ERROR",
+                "expect": {
+                    "DRAM ECC Corrected Fault {CE}": "BIN7",
+                    "DRAM ECC Fault {UE}": "BIN7",
+                    "DMC Link Error {UE}": "BIN7",
+                    "Calibration errors": "BIN7",
+                    "Phy Train ERROR": "BIN7",
+                    "DMC Global Control Reg": "BIN7",
+                    "CHI Fault": "BIN7",
+                    "SRAM ECC Corrected Fault": "BIN7",
+                    "SRAM ECC Fault": "BIN7",
+                    "DMC Error Recovery": "BIN7",
+                    "Error: MCU": "BIN7",
+                    "DDRFAILSAFE": "BIN7"
+                }
+            }
+        ],
+        "error_filter": [
+            "Error: GIC",
+            "ERROR:   Failed to populate"
+        ]
+    }
+}

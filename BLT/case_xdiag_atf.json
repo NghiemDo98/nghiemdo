@@ -1,0 +1,32 @@
+{
+    "test_arguments": {
+        "name": "xDiag ATF",
+        "console device": "/dev/ttyO5",
+        "console speed": "115200",
+        "stop_on_failed": true,
+        "power" : "reset",
+        "iterations": 20,
+        "tests": [
+            {
+                "test": "PCIe",
+                "description": "Check PCIe link up",
+                "iteration": 2,
+                "power": "reset",
+                "command": "pci rc_mask 0x0f;pci rca_map 0x0000;pci init",
+                "expecting" : {
+                	"RCA0-PCIe0": "x16-gen3",
+                	"RCA1-PCIe0": "x16-gen3",
+            		"RCA2-PCIe0": "x16-gen3", 
+            		"RCA3-PCIe0": "x16-gen4",
+            		"RCB0-PCIe0": "x8-gen3",
+            		"RCB0-PCIe4": "x8-gen3",
+            		"RCB1-PCIe0": "x8-gen3",
+            		"RCB1-PCIe4": "x8-gen3",
+            		"RCB2-PCIe4": "x8-gen3",
+            		"RCB3-PCIe0": "x8-gen3",
+            		"RCB3-PCIe4": "x4-gen3"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,145 @@
+{
+    "test_arguments": {
+        "name": "SW Ramdisk",
+        "console_device": "/dev/ttyO2",
+        "console_speed": "115200",
+        "monitor": {
+            "SCP": "/dev/ttyO4",
+            "ATF": "/dev/ttyO5"
+        },
+        "sensor_monitor": {
+            "S0_SOC_Temp": {
+                "index": 0,
+                "min": 5,
+                "max": 95
+            }
+        },
+        "stop_on_failed": true,
+        "power": "cycle 30",
+        "iterations": 3,
+        "boot_up": [
+            [
+                "NOTICE:  DRAM FW version",
+                90
+            ],
+            [
+                "DRAM: ",
+                30
+            ],
+            [
+                "American Megatrends",
+                120
+            ],
+            [
+                "EFI stub: Booting Linux Kernel...",
+                80
+            ],
+            [
+                "CentOS Linux 8",
+                80
+            ],
+            [
+                "login:",
+                80
+            ]
+        ],
+        "tests": [
+            {
+                "test": "LoginCentOS",
+                "description": "Test Login CentOS",
+                "enable": true,
+                "username": "root",
+                "password": "Ampere@4655",
+                "prompt": "\\#",
+                "retry": 3
+            },
+            {
+                "test": "CoreEnable",
+                "description": "Test number core enable",
+                "enable": true
+            },
+            {
+                "test": "xDiagStressapptest",
+                "enable": true,
+                "description": "xDiaglinux Quicksilver Stressapptest",
+                "power": "reset",
+                "command": "mem_test -type stressapptest -timeout 600 -mem_args -s 300 -M {test_mem} -W",
+                "expecting": [
+                    "Message: no error found => TEST PASSED"
+                ],
+                "fail": [
+                    "FAIL"
+                ]
+            },
+            {
+                "test": "xDiagMemtester",
+                "enable": true,
+                "description": "xDiaglinux Quicksilver Memtester",
+                "power": "reset",
+                "command": "mem_test -timeout 300 -type memtester -mem_args 5G",
+                "expecting": [
+                    "Message: no error found => TEST PASSED"
+                ],
+                "fail": [
+                    "FAIL"
+                ]
+            },
+            {
+                "test": "xDiagIperf",
+                "enable": true,
+                "description": "xDiaglinux Quicksilver iPerf3",
+                "power": "reset",
+                "command": "net_iperf -mode normal -server 10.76.225.98 -client enp1s0 -timeout 600 -runtime 300 -iperf_options -p 21000 -P 8 -i 20",
+                "expecting": [
+                    ".* <--> .*: PASS"
+                ],
+                "fail": [
+                    "FAIL"
+                ]
+            },
+            {
+                "test": "xDiagFio",
+                "enable": false,
+                "description": "xDiaglinux Quicksilver FIO",
+                "power": "reset",
+                "command": "stor_fio -timeout 600 -d PCI01/00.01.0/01.00.0 -fio_args --direct=1 --rw=readwrite --bs=64k --iodepth=1 --time_base=1 --runtime=300 --numjobs=32 --verify=md5",
+                "expecting": [
+                    "Verdict: PASS"
+                ],
+                "fail": [
+                    "Verdict: FAIL"
+                ]
+            }
+        ],
+        "error_signal": [
+            {
+                "name": "ATF ERROR",
+                "expect": [
+                    "ERR0STATUS",
+                    "ERR1STATUS",
+                    "ERROR:   CE buffer overflow, reporting CE through SDEI"
+                ]
+            },
+            {
+                "name": "SCP ERROR",
+                "expect": [
+                    "Error: Mesh"
+                ]
+            },
+            {
+                "name": "DDR ERROR",
+                "expect": [
+                    "DRAM ECC Corrected Fault {CE}",
+                    "DRAM ECC Fault {UE}",
+                    "DMC Link Error {UE}",
+                    "Calibration errors",
+                    "Phy Train ERROR",
+                    "correctable error",
+                    "uncorrectable error"
+                ]
+            }
+        ],
+        "error_filter": [
+        ]
+    }
+}

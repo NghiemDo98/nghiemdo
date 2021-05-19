@@ -1,0 +1,22 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "CPU_PLL": 3050,
+                        "PCP_VRM": -50,
+                        "SOC_VRM": 40
+                    },
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0020": "0xffff",
+                            "0xe34000": "0xFFFFFFC4"
+                        }
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_v3.1", "config": "test_configs/case_centos_v3.json"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "test_arguments": {
+        "name": "AERO",
+        "CLI device": "/dev/ttyO4",
+        "console device": "/dev/ttyO2",
+        "console speed": "115200",
+        "boot time": 45,
+        "stop_on_failed": false,
+        "power" : "cycle",
+        "iterations": 3,
+        "tests": [
+            {
+                "test": "Matrix",
+                "config": ["smcfg 21 3 1050", "vrminfo 3"],
+                "description": "Matrix test"
+            },
+            {
+                "test": "SLC",
+                "description": "SLC test",
+                "core": 1
+            }
+        ]
+    }
+}

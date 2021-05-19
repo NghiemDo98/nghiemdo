@@ -1,0 +1,41 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "CPU_PLL": 3050,
+                        "PCP_VRM": -50,
+                        "SOC_VRM": 90
+                    },
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0020": "0xffff"
+                        }
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_bin9.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 110
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_bin9.json"
+        },
+        {
+            "setup": [
+                {
+                    "Margin": {
+                        "SOC_VRM": 120
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "CentOS_FA", "config": "test_configs/case_centos_fa_bin9.json"
+        }
+    ]
+}

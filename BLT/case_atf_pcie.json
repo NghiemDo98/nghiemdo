@@ -1,0 +1,91 @@
+{
+    "consoles": {
+        "bmc": {
+            "name": "bmc_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO1"
+        },
+        "uefi": {
+            "name": "uefi_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO2"
+        },
+        "scp": {
+            "name": "scp_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO4"
+        },
+        "atf": {
+            "name": "atf_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO5"
+        }
+    },
+    "arguments": {
+        "iterations": 1,
+        "power_ctrl": "off_on 40",
+        "prompt_message": "PCIe-Val>",
+        "prompt_timeout": 120,
+        "stop_on_errors": true
+    },
+    "steps": [
+        {
+            "command": "ch 0x4 0x1",
+            "enable": true,
+            "timeout": 15,
+            "loops": 100,
+            "expects": [
+                "Socket-0 \\| RCA-0 \\| PHY-0 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-0 \\| PHY-1 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-0 \\| PHY-2 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-0 \\| PHY-3 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCA-1 \\| PHY-4 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-1 \\| PHY-5 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-1 \\| PHY-6 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-1 \\| PHY-7 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCA-2 \\| PHY-8 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-2 \\| PHY-9 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-2 \\| PHY-10 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-2 \\| PHY-11 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCA-3 \\| PHY-12 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-3 \\| PHY-13 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-3 \\| PHY-14 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCA-3 \\| PHY-15 \\| HB Addr-(\\S+) \\| Gen-3 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCB-0 \\| PHY-16 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-0 \\| PHY-17 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-0 \\| PHY-18 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-0 \\| PHY-19 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCB-1 \\| PHY-20 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-1 \\| PHY-21 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-1 \\| PHY-22 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-1 \\| PHY-23 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCB-2 \\| PHY-24 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-2 \\| PHY-25 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-2 \\| PHY-26 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-2 \\| PHY-27 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+
+                "Socket-0 \\| RCB-3 \\| PHY-28 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-3 \\| PHY-29 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-3 \\| PHY-30 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)",
+                "Socket-0 \\| RCB-3 \\| PHY-31 \\| HB Addr-(\\S+) \\| Gen-1 \\| Link-x4 \\|  (\\S+)"
+            ],
+            "failure_messages": [
+                "Socket-0 \\| RC(\\S+) \\| PHY-(\\d+) \\| HB Addr-(\\S+) \\| Link Down \\|(\\s+)(\\S+)"
+            ],
+            "failure_continue": [
+                "Socket-0 \\| RCA(\\S+) \\| PHY-(\\d+) \\| HB Addr-(\\S+) \\| Gen-1 \\|(\\s+)(\\S+)",
+                "Socket-0 \\| RC(\\S+) \\| PHY-(\\d+) \\| HB Addr-(\\S+) \\| Gen-2 \\|(\\s+)(\\S+)"
+            ]
+        }
+    ]
+}

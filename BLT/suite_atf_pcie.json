@@ -1,0 +1,19 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F01B8": "0xC80",
+                            "0xE38038": "0xC80",
+                            "0xE30170": "0xBEA",
+                            "0xE34010": "0x32"
+                        }
+                    }
+                }
+            ],
+            "name": "AtfPciTest", "display": "PCIe", "config": "test_configs/case_atf_pcie.json"
+        }
+    ]
+}

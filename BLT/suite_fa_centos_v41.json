@@ -1,0 +1,21 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                	"Margin": {
+                		"CPU_PLL": 3300,
+                        "DDR_VRM": -60
+                    },
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0020": "0xffff",
+                            "0xE34070": "0x1"
+                        }
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "FA_CentOS_v4.1", "config": "test_configs/case_centos_A1.json"
+        }
+    ]
+}

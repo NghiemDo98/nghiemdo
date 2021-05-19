@@ -1,0 +1,12 @@
+{
+    "test_arguments": {
+        "name": "xDiag ATF",
+        "console device": "/dev/ttyO5",
+        "console speed": "115200",
+        "stop_on_failed": true,
+        "power" : "cycle 30",
+        "iterations": 20,
+        "tests": [
+        ]
+    }
+}

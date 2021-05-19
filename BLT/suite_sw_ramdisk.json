@@ -1,0 +1,5 @@
+{
+    "test_cases": [
+        { "name": "SWRamdiskTest", "display": "SW_ramdisk_memtester", "config": "test_configs/case_sw_ramdisk.json" }
+    ]
+}

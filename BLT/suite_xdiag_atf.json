@@ -1,0 +1,5 @@
+{
+    "test_cases": [
+        { "name": "XdiagATFTest", "display": "xDiagATF test", "config": "test_configs/case_xdiag_atf_boot.json" }
+    ]
+}

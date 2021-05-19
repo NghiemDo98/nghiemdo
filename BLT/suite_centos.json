@@ -1,0 +1,5 @@
+{
+    "test_cases": [
+        { "name": "CentOSTest", "display": "CentOS_Test", "config": "test_configs/case_centos.json" }
+    ]
+}

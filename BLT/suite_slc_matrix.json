@@ -1,0 +1,164 @@
+{
+    "test_cases": [
+        {
+        	"setup": {"CPM": {"Enable" : ["0x1", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM0", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x2", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM1", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x4", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM2", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x8", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM3", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x10", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM4", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x20", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM5", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x40", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM6", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x80", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM7", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x100", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM8", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x200", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM9", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x400", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM10", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x800", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM11", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x1000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM12", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x2000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM13", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x4000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM14", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x8000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM15", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x10000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM16", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x20000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM17", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x40000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM18", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x80000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM19", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x100000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM20", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x200000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM21", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x400000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM22", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x800000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM23", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x1000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM24", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x2000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM25", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x4000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM26", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x8000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM27", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x10000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM28", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x20000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM29", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x40000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM30", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x80000000", "0x0"]}},
+        	"name": "AEROTest", "display": "SLC_CPM31", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x01"]}},
+        	"name": "AEROTest", "display": "SLC_CPM32", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x02"]}},
+        	"name": "AEROTest", "display": "SLC_CPM33", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x04"]}},
+        	"name": "AEROTest", "display": "SLC_CPM34", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x08"]}},
+        	"name": "AEROTest", "display": "SLC_CPM35", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x10"]}},
+        	"name": "AEROTest", "display": "SLC_CPM36", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x20"]}},
+        	"name": "AEROTest", "display": "SLC_CPM37", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x40"]}},
+        	"name": "AEROTest", "display": "SLC_CPM38", "config": "test_configs/case_aero_slc.json"
+        },
+        {
+        	"setup": {"CPM": {"Enable" : ["0x0", "0x80"]}},
+        	"name": "AEROTest", "display": "SLC_CPM39", "config": "test_configs/case_aero_slc.json"
+        }
+    ]
+}

@@ -1,0 +1,234 @@
+{
+    "consoles": {
+        "bmc": {
+            "name": "bmc_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO1"
+        },
+        "efi": {
+            "name": "efi_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO2"
+        },
+        "scp": {
+            "name": "scp_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO4"
+        },
+        "atf": {
+            "name": "atf_console",
+            "type": "Kermit",
+            "speed": "115200",
+            "device": "/dev/ttyO5"
+        }
+    },
+    "arguments":
+    {
+        "iterations": 3,
+        "power_ctrl": "reset",
+        "prompt_message": "Shell>",
+        "prompt_timeout": 60,
+        "stop_on_errors": false
+    },
+    "commands": [
+        {
+            "command": "FS0:",
+            "expects": [
+                "FS0:"
+            ],
+            "failure_messages": null,
+            "prompt": null
+        },
+        {
+            "command": "xdiagefi_jade.efi",
+            "expects": [
+                "xDiag>"
+            ],
+            "failure_messages": null,
+            "prompt": null
+        },
+
+        {
+            "command": "pcicfg idtest 02.01.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 02.02.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 02.03.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 02.04.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+
+        {
+            "command": "pcicfg idtest 03.01.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 03.02.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 03.03.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 03.04.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+
+        {
+            "command": "pcicfg idtest 01.01.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 01.02.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 01.03.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 01.04.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+
+        {
+            "command": "pcicfg idtest 00.01.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 00.02.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 00.03.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        },
+        {
+            "command": "pcicfg idtest 00.04.00.00 144d 30",
+            "expects": [
+                "Test VendorID 0x144D Pass"
+            ],
+            "failure_messages": [
+                "Correctable Error",
+                "Uncorrectable Error"
+            ],
+            "prompt": "xDiag>"
+        }
+    ]
+}

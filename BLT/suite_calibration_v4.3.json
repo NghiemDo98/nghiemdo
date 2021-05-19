@@ -1,0 +1,34 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                	"Margin": {
+                        "PCP_VRM": -35,
+                        "DDR_VRM": -60
+                    },
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0020": "0xffff",
+                            "0xE34070": "0x1",
+                            "0xE34048": "0x0",
+                            "0x1F0088": "0x00030003",
+                            "0x1F0090": "0x00030003",
+                            "0x1F0098": "0x00030003",
+                            "0x1F00A0": "0x00030003",
+                            "0x1F00A8": "0x00020002",
+                            "0x1F00B0": "0x00020002",
+                            "0x1F00B8": "0x00020002",
+                            "0x1F00C0": "0x00020002",
+                            "0x1F00C8": "0x00020002",
+                            "0x1F00D0": "0x00020002",
+                            "0x1F00D8": "0x00020002",
+                            "0x1F00E0": "0x00020002"
+                        }
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "Calibration_CentOS_v4.2", "config": "test_configs/case_centos_A1_43.json"
+        }
+    ]
+}

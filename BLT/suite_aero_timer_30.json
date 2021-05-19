@@ -1,0 +1,5 @@
+{
+    "test_cases": [
+        { "name": "AEROTest", "display": "AERO test", "config": "test_configs/case_aero_timer_30.json" }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "test_case": {
+        "name": "Linux",
+        "port": "/dev/ttyO2",
+        "speed": "115200",
+        "enable_xdiag": true,
+        "test_cases": [
+            {
+                "test": "Network",
+                "command": "net_iperf",
+                "test_time": 600,
+                "test_timeout": 630,
+                "server_interface": "eth0",
+                "client_interface": "eth1",
+                "prompt": "xDiag>",
+                "pass": "eth1 <--> eth0: PASS",
+                "fail": "FAIL",
+                "timeout": 650,
+                "stop_on_failed": true
+            },
+            {
+                "test": "Network",
+                "command": "net_iperf",
+                "test_time": 600,
+                "test_timeout": 630,
+                "server_interface": "eth2",
+                "client_interface": "eth3",
+                "prompt": "xDiag>",
+                "pass": "eth3 <--> eth2: PASS",
+                "fail": "FAIL",
+                "timeout": 650,
+                "stop_on_failed": true
+            },
+            {
+                "test": "Memtester",
+                "command": "memtester",
+                "test_timeout": 40,
+                "size": 32,
+                "prompt": "xDiag>",
+                "pass": "TEST PASSED",
+                "fail": "FAIL",
+                "timeout": 80,
+                "stop_on_failed": true
+            },
+            {
+                "test": "Google Stress Apps",
+                "command": "stressapptest",
+                "test_time": 30,
+                "test_timeout": 40,
+                "size": 32000,
+                "prompt": "xDiag>",
+                "pass": "TEST PASSED",
+                "fail": "FAIL",
+                "timeout": 60,
+                "stop_on_failed": true
+            },
+            {
+                "test": "Storage",
+                "command": "stor_fio",
+                "test_time": 30,
+                "test_timeout": 40,
+                "stor_device": "SATA_1/0",
+                "prompt": "xDiag>",
+                "pass": "TEST PASSED",
+                "fail": "FAIL",
+                "timeout": 50,
+                "stop_on_failed": true
+            }
+        ]
+    },
+    "error_monitors": [
+        {
+            "name": "Error Monitor 1",
+            "port": "/dev/ttyO4",
+            "speed": "115200",
+            "error_signal": [
+                {
+                    "name": "PHY Training",
+                    "type": "ERROR",
+                    "expect": "ERR: PHY training error",
+                    "result": "1",
+                    "message": "DRAM Initialization failed at step PHY training"
+                },
+                {
+                    "name": "IOB TRANS",
+                    "type": "ERROR",
+                    "expect": "Error: IOB TRANS",
+                    "result": "1",
+                    "message": "IOB TRANS error"
+                },
+                {
+                    "name": "L2 cache error",
+                    "type": "ERROR",
+                    "expect": "Error: L2",
+                    "result": "1",
+                    "message": "L2 cache error"
+                },
+                {
+                    "name": "L3 cache error",
+                    "type": "ERROR",
+                    "expect": "Error: L3",
+                    "result": "1",
+                    "message": "L3 cache error"
+                }
+            ]
+        },
+        {
+            "name": "Error Monitor 2",
+            "port": "/dev/ttyO5",
+            "speed": "115200",
+            "error_signal": [
+                {
+                    "name": "PHY Training",
+                    "type": "ERROR",
+                    "expect": "ERR: PHY training error",
+                    "result": "1",
+                    "message": "DRAM Initialization failed at step PHY training"
+                },
+                {
+                    "name": "IOB TRANS",
+                    "type": "ERROR",
+                    "expect": "Error: IOB TRANS",
+                    "result": "1",
+                    "message": "IOB TRANS error"
+                },
+                {
+                    "name": "L2 cache error",
+                    "type": "ERROR",
+                    "expect": "Error: L2",
+                    "result": "1",
+                    "message": "L2 cache error"
+                },
+                {
+                    "name": "L3 cache error",
+                    "type": "ERROR",
+                    "expect": "Error: L3",
+                    "result": "1",
+                    "message": "L3 cache error"
+                }
+            ]
+        }
+    ]
+}

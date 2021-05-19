@@ -1,0 +1,23 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                	"Margin": {
+                        "PCP_VRM": 0,
+                        "DDR_VRM": -60,
+                        "RCA_VRM": 20
+                    },
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0020": "0xffff",
+                            "0xE34070": "0x1",
+                            "0xE34048": "0x0"
+                        }
+                    }
+                }
+            ],
+            "name": "CentOSTest", "display": "FA_CentOS_v4.3", "config": "test_configs/case_centos_A1_43_db.json"
+        }
+    ]
+}

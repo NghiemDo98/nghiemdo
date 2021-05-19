@@ -1,0 +1,5 @@
+{
+    "test_cases": [
+        { "name": "MbistTest", "display": "MBIST test", "config": "test_configs/case_mbist.json" }
+    ]
+}

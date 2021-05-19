@@ -1,0 +1,8 @@
+{
+    "test_cases": [
+        { "name": "XdiagRamdiskTest", "display": "xDiagRamdisk", "config": "test_configs/case_xdiag_ramdisk.json",
+        	"setup": {"Image": {"SCP" : "/home/cieloadm/Cielo/sw-release/image/osprey/4.09.20/fw_4.09.20.hpm"}} },
+        { "name": "XdiagRamdiskTest", "display": "xDiagRamdisk", "config": "test_configs/case_xdiag_ramdisk.json",
+        	"setup": {"Image": {"SCP" : "/home/cieloadm/Cielo/sw-release/image/osprey/4.09.18/fw_4.09.18.hpm"}} }
+    ]
+}

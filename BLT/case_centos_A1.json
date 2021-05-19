@@ -1,0 +1,358 @@
+{
+    "test_arguments": {
+        "name": "SW Ramdisk",
+        "console_device": "OS console",
+        "console_speed": "115200",
+        "monitor": {
+            "SCP": "SCP console",
+            "ATF": "ATF console"
+        },
+        "sensor_monitor": {
+            "S0_SOC_Temp": {
+                "index": 0,
+                "max": 110
+            },
+            "S0_Mem1InletTemp": {
+                "index": 0
+            },
+            "S0_Mem2InletTemp": {
+                "index": 0
+            },
+            "S0_CPUInletTemp": {
+                "index": 0
+            },
+            "S0_CPUOutletTemp": {
+                "index": 0
+            },
+            "AF_EX_Zone1_Temp": {
+                "index": 0
+            },
+            "AF_EX_Zone2_Temp": {
+                "index": 0
+            },
+            "S0_SOC_VRD_Temp": {
+                "index": 0
+            },
+            "S0_DIMM_VRD_Temp": {
+                "index": 0
+            },
+            "S0_PMD_VRD_Temp": {
+                "index": 0
+            },
+            "S0_DIMMG0_Temp": {
+                "index": 0
+            },
+            "S0_3V3_SOC_Pwr": {
+                "index": 0
+            },
+            "S0_1V8_SOC_Pwr": {
+                "index": 0
+            },
+            "S0_CPU_Pwr": {
+                "index": 0
+            },
+            "S0_MEM_Pwr": {
+                "index": 0
+            },
+            "S0_0V75_PCP": {
+                "index": 0
+            }
+        },
+        "stop_on_failed": true,
+        "power": "on",
+        "off_delay": 60,
+        "iterations": 3,
+        "boot_up": [
+            [
+                "NOTICE:  DRAM FW version",
+                90
+            ],
+            [
+                "DRAM: ",
+                90,
+                "BIN7"
+            ],
+            [
+                "American Megatrends",
+                180
+            ],
+            [
+                "EFI stub: Booting Linux Kernel...",
+                80
+            ],
+            [
+                "CentOS Linux 8",
+                120
+            ],
+            [
+                "login:",
+                80
+            ]
+        ],
+        "tests": [
+            {
+                "test": "LoginCentOS",
+                "description": "Test Login CentOS",
+                "enable": true,
+                "username": "root",
+                "password": "Ampere@4655",
+                "prompt": "\\#",
+                "retry": 3
+            },
+            {
+                "test": "CoreEnable",
+                "description": "Test number core enable",
+                "enable": true
+            },
+            {
+                "test": "xDiagStressapptest",
+                "enable": false,
+                "description": "xDiaglinux Quicksilver Stressapptest",
+                "power": "reset",
+                "command": "mem_test -type stressapptest -timeout 400 -mem_args -s 300 -M {test_mem} -W",
+                "expecting": [
+                    "Message: no error found => TEST PASSED"
+                ],
+                "fail": {
+                    "BIN7": "FAIL"
+                }
+            },
+            {
+                "test": "xDiagFio",
+                "enable": false,
+                "description": "xDiaglinux Quicksilver FIO",
+                "power": "reset",
+                "command": "stor_fio -timeout 400 -d {storage_dev} -fio_args --direct=1 --rw=readwrite --bs=64k --iodepth=1 --time_base=1 --runtime=300 --numjobs=32 --verify=md5",
+                "storage_drives": [
+                    "PCI02/00.01.0/01.00.0",
+                    "PCI02/00.03.0/02.00.0",
+                    "PCI02/00.05.0/03.00.0",
+                    "PCI02/00.07.0/04.00.0",
+
+                    "PCI03/00.01.0/01.00.0",
+                    "PCI03/00.03.0/02.00.0",
+                    "PCI03/00.05.0/03.00.0",
+                    "PCI03/00.07.0/04.00.0",
+
+                    "PCI04/00.01.0/01.00.0",
+                    "PCI04/00.03.0/02.00.0",
+                    "PCI04/00.05.0/03.00.0",
+                    "PCI04/00.07.0/04.00.0",
+
+                    "PCI05/00.01.0/01.00.0",
+                    "PCI05/00.03.0/02.00.0",
+                    "PCI05/00.07.0/04.00.0",
+                    "PCI05/00.05.0/03.00.0"
+                ],
+                "expecting": [
+                    "Verdict: PASS"
+                ],
+                "fail": {
+                    "BIN9": "Verdict: FAIL"
+                }
+            },
+            {
+                "test": "xDiagMemtester",
+                "enable": false,
+                "description": "xDiaglinux Quicksilver Memtester",
+                "power": "reset",
+                "command": "mem_test -timeout 300 -type memtester -mem_args 5G",
+                "expecting": [
+                    "Message: no error found => TEST PASSED"
+                ],
+                "fail": {
+                    "BIN7": "FAIL"
+                }
+            },
+            {
+                "test": "xDiagIperf",
+                "enable": false,
+                "description": "xDiaglinux Quicksilver iPerf3",
+                "power": "reset",
+                "command": "net_iperf -mode normal -server 10.76.225.98 -client enp1s0 -timeout 400 -runtime 300 -iperf_options -p 21000 -P 8 -i 20",
+                "expecting": [
+                    ".* <--> .*: PASS"
+                ],
+                "fail": {
+                    "BIN9": "FAIL"
+                }
+            },
+            {
+                "test": "xDiagSpec2017",
+                "enable": true,
+                "description": "xDiaglinux Quicksilver CPU stress test Spec2017",
+                "power": "reset",
+                "command": "./stresstool-script/spec-cpu2017-launcher.sh base {copies} {run_time} intrate",
+                "run_time": 300,
+                "expecting": [
+                    "Test PASS"
+                ],
+                "fail": {
+                    "BIN11": ["ERROR"]
+                }
+                
+            },
+            {
+                "test": "xDiagDhrystone",
+                "enable": false,
+                "description": "xDiaglinux Quicksilver CPU stress test Dhrystone",
+                "power": "reset",
+                "command": "./stresstool-script/ampere-dhrystone-launcher.sh {num_runs} {run_time}",
+                "num_runs": 1500000000,
+                "run_time": 300,
+                "expecting": [
+                    "Test PASS"
+                ],
+                "fail": {
+                    "BIN11": ["DHRYSTONE_LAUNCHER_ERROR", "ERROR"]
+                }
+            },
+            {
+                "test": "xDiagAll",
+                "enable": true,
+                "description": "xDiaglinux Quicksilver run test by diag command",
+                "power": "reset",
+                "command": "msgnoti diagstop 0; diag net -f blt_a1.ini -time 600; diag stor -f blt_a1.ini -time 600; diag pci -f blt_a1.ini -time 600; diag mem -f blt_a1.ini -time 600",
+                "timeout": 800,
+                "expecting": [
+                    "DIAG TEST DONE ALL"
+                ],
+                "fail": {
+                   "BIN9-3": ["PCIE TEST FAILED", "NET TEST FAILED", "STORAGE TEST FAILED"],
+                   "BIN7": ["MEMORY TEST FAILED"]
+                },
+                "timeout_bin": "BIN12"
+            }
+        ],
+        "bin_priority": ["BIN8", "BIN6", "BIN7", "BIN11", "BIN11-1", "BIN11-2", "BIN9", "BIN9-1", "BIN9-2", "BIN9-3", "BIN10", "BIN12"],
+        "fail_binning": {
+            "BIN6": [],
+            "BIN7": ["DDR initialization failure. Enter safemode", "DDR initialization failure. STOP"],
+            "BIN8": [],
+            "BIN9-2": ["AER failed", "PCIe Bus Error", "AER: Uncorrected", "AER: Corrected error", "AER: Multiple Corrected error"],
+            "BIN10": [],
+            "BIN11": ["Kernel panic"],
+            "BIN11-1": ["Hardware Error"],
+            "BIN12": [
+                "CE buffer overflow, reporting CE through SDEI",
+                "Unhandled Exception",
+                "Internal error",
+                "Stack dump",
+                "core dumped",
+                "Process Error: failed to allocate memory",
+                "Data abort: Translation fault, second level",
+                "kernel/hung",
+                "Synchronous Abort",
+                "Synchronous Exception at",
+                "Exception happened in",
+                "FAILURE",
+                "Unable to handle kernel paging request at virtual address",
+                "------------\\[ cut here \\]------------"
+            ]
+        },
+        "pass_binning": {
+            "0x80": {
+                "0x33": "BIN0",
+                "0x30": "BIN1"
+            },
+            "0x64": {
+                "0x33": "BIN2",
+                "0x30": "BIN3"
+            }
+        },
+        "error_signal": [
+            {
+                "name": "ATF ERROR",
+                "expect": {
+                    "CE buffer overflow, reporting CE through SDEI": "BIN12",
+                    "RAS: PCIe RASDP error": "BIN9",
+                    "ERROR:   Failed to populate": "BIN12",
+                    "ERR: 0xbff0c100": "BIN7",
+                    "DRAM: 0GB": "BIN7",
+                    "DDR initialization failure. Enter safemode": "BIN7",
+                    "ERROR:   SMPro : MBox 1 : Timeout waiting for TX ACK": "BIN12"
+                }
+            },
+            {
+                "name": "SCP ERROR",
+                "expect": {
+                    "Error: Mesh": "BIN6",
+                    "Error: GIC": "BIN6",
+                    "PMpro WDT Failure": "BIN12"
+                }
+            },
+            {
+                "name": "DDR ERROR",
+                "expect": {
+                    "DRAM ECC Corrected Fault {CE}": "BIN7",
+                    "DRAM ECC Fault {UE}": "BIN7",
+                    "DMC Link Error {UE}": "BIN7",
+                    "Calibration errors": "BIN7",
+                    "Phy Train ERROR": "BIN7",
+                    "DMC Global Control Reg": "BIN7",
+                    "CHI Fault": "BIN7",
+                    "SRAM ECC Corrected Fault": "BIN7",
+                    "SRAM ECC Fault": "BIN7",
+                    "DMC Error Recovery": "BIN7",
+                    "Error: MCU": "BIN7",
+                    "DDRFAILSAFE": "BIN7"
+                }
+            }
+        ],
+        "error_filter": [
+            "Error: GIC",
+            "ERROR:   Failed to populate"
+        ],
+        "pcie_config": {
+            "PCIE0.1": "Speed 3 Width 4",
+            "PCIE0.2": "Disabled",
+            "PCIE0.3": "Speed 3 Width 4",
+            "PCIE0.4": "Disabled",
+            "PCIE1.1": "Speed 3 Width 4",
+            "PCIE1.2": "Disabled",
+            "PCIE1.3": "Speed 3 Width 4",
+            "PCIE1.4": "Disabled",
+            "PCIE2.1": "Speed 3 Width 8",
+            "PCIE2.2": "Disabled",
+            "PCIE2.3": "Speed 3 Width 4",
+            "PCIE2.4": "Disabled",
+            "PCIE3.1": "Speed 3 Width 4",
+            "PCIE3.2": "Disabled",
+            "PCIE3.3": "Speed 3 Width 4",
+            "PCIE3.4": "Disabled",
+            "PCIE4.1": "Speed 1 Width 4",
+            "PCIE4.2": "Disabled",
+            "PCIE4.3": "Speed 1 Width 4",
+            "PCIE4.4": "Disabled",
+            "PCIE4.5": "Speed 1 Width 4",
+            "PCIE4.6": "Disabled",
+            "PCIE4.7": "Speed 1 Width 4",
+            "PCIE4.8": "Disabled",
+            "PCIE5.1": "Speed 1 Width 4",
+            "PCIE5.2": "Disabled",
+            "PCIE5.3": "Speed 1 Width 4",
+            "PCIE5.4": "Disabled",
+            "PCIE5.5": "Speed 1 Width 4",
+            "PCIE5.6": "Disabled",
+            "PCIE5.7": "Speed 1 Width 4",
+            "PCIE5.8": "Disabled",
+            "PCIE6.1": "Speed 1 Width 4",
+            "PCIE6.2": "Disabled",
+            "PCIE6.3": "Speed 1 Width 4",
+            "PCIE6.4": "Disabled",
+            "PCIE6.5": "Speed 1 Width 4",
+            "PCIE6.6": "Disabled",
+            "PCIE6.7": "Speed 1 Width 4",
+            "PCIE6.8": "Disabled",
+            "PCIE7.1": "Speed 1 Width 4",
+            "PCIE7.2": "Disabled",
+            "PCIE7.3": "Speed 1 Width 4",
+            "PCIE7.4": "Disabled",
+            "PCIE7.5": "Speed 1 Width 4",
+            "PCIE7.6": "Disabled",
+            "PCIE7.7": "Speed 1 Width 4",
+            "PCIE7.8": "Disabled"
+        },
+        "pcie_link_fail_bin": "BIN9-1"
+    }
+}

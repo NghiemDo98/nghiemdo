@@ -1,0 +1,27 @@
+{
+    "test_cases": [
+        {
+            "setup": [
+                {
+                    "NVPARAM": {
+                        "NvParameters": {
+                            "0x1F0088": "0x01010101",
+                            "0x1F0090": "0x01010101",
+                            "0x1F0098": "0x01010101",
+                            "0x1F00A0": "0x01010101",
+                            "0x1F00A8": "0x00000000",
+                            "0x1F00B0": "0x00000000",
+                            "0x1F00B8": "0x00000000",
+                            "0x1F00C0": "0x00000000",
+                            "0x1F00C8": "0x00000000",
+                            "0x1F00D0": "0x00000000",
+                            "0x1F00D8": "0x00000000",
+                            "0x1F00E0": "0x00000000"
+                        }
+                    }
+                }
+            ],
+            "name": "XdiagEfiPcieTest", "display": "EFI_PCIe", "config": "test_configs/case_xdiag_efi_pcie.json"
+        }
+    ]
+}

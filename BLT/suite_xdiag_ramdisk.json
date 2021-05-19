@@ -1,0 +1,5 @@
+{
+    "test_cases": [
+        { "name": "xDiagRamdiskTest", "display": "xDiagRamdisk_test", "config": "test_configs/case_xdiag_ramdisk.json" }
+    ]
+}

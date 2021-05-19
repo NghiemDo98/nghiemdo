@@ -1,0 +1,56 @@
+{
+    "test_cases": [
+        {
+        	"setup": {"PLL": {"PCP" : "24"}},
+        	"name": "AEROTest", "display": "PCPPLL_1800", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "26"}},
+        	"name": "AEROTest", "display": "PCPPLL_1900", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "28"}},
+        	"name": "AEROTest", "display": "PCPPLL_2000", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "2a"}},
+        	"name": "AEROTest", "display": "PCPPLL_2100", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "2c"}},
+        	"name": "AEROTest", "display": "PCPPLL_2200", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "2e"}},
+        	"name": "AEROTest", "display": "PCPPLL_2300", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "30"}},
+        	"name": "AEROTest", "display": "PCPPLL_2400", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "32"}},
+        	"name": "AEROTest", "display": "PCPPLL_2500", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "34"}},
+        	"name": "AEROTest", "display": "PCPPLL_2600", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "36"}},
+        	"name": "AEROTest", "display": "PCPPLL_2700", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "38"}},
+        	"name": "AEROTest", "display": "PCPPLL_2800", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "3a"}},
+        	"name": "AEROTest", "display": "PCPPLL_2900", "config": "test_configs/case_aero_slc_v1.json"
+        },
+        {
+        	"setup": {"PLL": {"PCP" : "3c"}},
+        	"name": "AEROTest", "display": "PCPPLL_3000", "config": "test_configs/case_aero_slc_v1.json"
+        }
+    ]
+}
